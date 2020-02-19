@@ -10,6 +10,7 @@ public class SqMax {
         } else if (third > forth) {
             result = third;
         }
+
         return result;
     }
 }

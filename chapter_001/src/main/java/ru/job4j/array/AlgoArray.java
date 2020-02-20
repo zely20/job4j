@@ -2,15 +2,16 @@ package ru.job4j.array;
 
 public class AlgoArray {
     public static void main(String[] args) {
-        int[] array = new int[] {5, 3, 2, 1, 4};
-        for (int i = 1; i < array.length; i++) {
-            if(i > i-1) {
-                int temp = array[i - 1]; // переменная для временного хранения значение ячейки с индексом 0.
-                array[i-1] = array[i]; // записываем в ячейку с индексом 0 значение ячейки с индексом 3.
-                array[i] = temp;
+        int[] array = new int[]{5, 3, 2, 1, 4};
+        for (int i = array.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (array[j] > array[j + 1]) {
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
             }
         }
-
 
         for (int index = 0; index < array.length; index++) {
             System.out.println(array[index]);

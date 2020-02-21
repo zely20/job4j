@@ -25,7 +25,7 @@ public class EndsWithTest {
     @Test
     public void whenNotEndWithFirstFalse() {
         char[] word = {'H', 'e', 'l', 'l', 'o'};
-        char[] post = {'h','e','l','l', 'o'};
+        char[] post = {'h', 'e', 'l', 'l', 'o'};
         boolean result = EndsWith.endsWith(word, post);
         assertThat(result, is(false));
     }

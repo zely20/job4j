@@ -6,10 +6,6 @@ public class Triangle {
     private Point second;
     private Point third;
 
-    public Triangle() {
-
-    }
-
     public Triangle(Point first, Point second, Point third) {
         this.first = first;
         this.second = second;
@@ -17,7 +13,7 @@ public class Triangle {
     }
 
     public double period(double a, double b, double c) {
-        return a + b + c;
+        return (a + b + c) / 2;
     }
 
     public double area() {
@@ -33,9 +29,6 @@ public class Triangle {
     }
 
     public boolean exist(double ab, double ac, double bc) {
-        if (ab + ac > bc && ac + bc > ab && ab + bc > ac) {
-            return true;
-        }
-        return false;
+        return ab + ac > bc && ac + bc > ab && ab + bc > ac;
     }
 }

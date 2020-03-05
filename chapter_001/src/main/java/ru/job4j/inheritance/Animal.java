@@ -11,5 +11,4 @@ public class Animal {
         this.name = name;
         System.out.println("constructor with one parametr");
     }
-
 }

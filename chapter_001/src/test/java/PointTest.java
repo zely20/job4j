@@ -1,20 +1,34 @@
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import ru.job4j.condition.Point;
 
+@Ignore
 public class PointTest {
 
     @Test
     public void distanceTest() {
         double expected = 2.82;
-        double out = Point.distance(1, 3, 3, 1);
+        Point a = new Point(1, 3);
+        Point b = new Point(3, 1);
+        double out = a.distance(b);
         Assert.assertEquals(expected, out, 0.01);
     }
 
     @Test
     public void distanceTwoTest() {
-        double expected = 2.00;
-        double out = Point.distance(0, 0, 2, 0);
+        double expected = 2.82;
+        Point a = new Point(1, 3);
+        Point b = new Point(3, 1);
+        double out = a.distance(b);
+        Assert.assertEquals(expected, out, 0.01);
+    }
+    @Test
+    public void distance3D() {
+        double expected = 5.00;
+        Point a = new Point(0, -3, 3);
+        Point b = new Point(3, 1, 3);
+        double out = a.distance(b);
         Assert.assertEquals(expected, out, 0.01);
     }
 }

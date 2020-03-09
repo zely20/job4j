@@ -1,4 +1,5 @@
 import org.junit.Test;
+import ru.job4j.condition.Point;
 import ru.job4j.condition.Triangle;
 
 import static org.hamcrest.core.Is.is;
@@ -8,13 +9,15 @@ public class TriangleTest {
 
     @Test
     public void whenExist() {
-        boolean result = Triangle.exist(2.0, 2.0, 2.0);
+        Triangle a = new Triangle();
+        boolean result = a.exist(2.0, 2.0, 2.0);
         assertThat(result, is(true));
     }
 
     @Test
     public void whenNoExist() {
-        boolean result = Triangle.exist(0.0, 2.0, 2.0);
+        Triangle a = new Triangle();
+        boolean result = a.exist(0.0, 2.0, 2.0);
         assertThat(result, is(false));
     }
 }

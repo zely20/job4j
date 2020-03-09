@@ -11,7 +11,6 @@ public class MagicBall {
         System.out.print("Добро пожаловать. Введите вопрос с ответом да или нет ");
         String question  = input.nextLine();
         int  rd = new Random().nextInt(3);
-
         if (rd == 0) {
             System.out.printf("Ответ ДА");
         } else if (rd == 1){

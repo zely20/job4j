@@ -8,30 +8,31 @@ public class UserStore {
                 return user;
             }
         }
-        return null;
+        throw new UserNotFoundException("User not found");
     }
 
     public static boolean validate(User user) throws UserInvalidException {
         if (user.isValid() && user.getUsername().length() > 3) {
             return true;
         }
-        return false;
+        throw new UserInvalidException("User not valid");
     }
 
-    public static void main(String[] args) throws UserNotFoundException {
+    public static void main(String[] args) {
         User[] users = {
-                new User("Petr Arsentev", false)
+                new User("Petr Arsentev", true)
 
         };
+
         try {
-            User user = findUser(users, "Petr Arsentev");
-            if (!validate(user)) {
-                throw new UserInvalidException("User not valid");
+            User user = findUser(users, "Pet Arsentev");
+            if (validate(user)) {
+                System.out.println("User is valid");
             }
         } catch (UserInvalidException e1) {
             e1.printStackTrace();
         } catch (UserNotFoundException e) {
-            System.out.println("User not found");
+            e.printStackTrace();
         }
     }
 }

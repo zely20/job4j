@@ -22,10 +22,10 @@ public class ConvertList2Array {
         List<Integer> list = List.of(1, 2, 3, 4, 5, 6, 7);
         int[][] rsl = toArray(list, 2);
         for (int[] row : rsl) {
-            for (int cell : row) {
-                System.out.print(cell + " ");
-            }
+           for (int cell : row) {
+               System.out.print(cell + " ");
+           }
             System.out.println();
-        }
+       }
     }
 }

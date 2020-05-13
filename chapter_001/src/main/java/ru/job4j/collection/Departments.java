@@ -15,13 +15,15 @@ public class Departments {
             }
         }
         rsl.addAll(temp);
-        rsl.sort(new DepDescComp());
+        sortAsc(rsl);
         return rsl;
     }
 
+    public static void sortAsc(List<String> orgs) {
+        orgs.sort(new DepAscComp());
+    }
 
-    public static void main(String[] args) {
-        List<String> dep = Arrays.asList("K1/SK1", "K1/SK1/SSK1");
-        System.out.println(fillGaps(dep));
+    public static void sortDesc(List<String> orgs) {
+            orgs.sort(new DepDescComp());
     }
 }

@@ -15,7 +15,7 @@ public class Departments {
             }
         }
         rsl.addAll(temp);
-        sortAsc(rsl);
+        sortDesc(rsl);
         return rsl;
     }
 

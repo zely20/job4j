@@ -5,19 +5,11 @@ import java.util.Comparator;
 public class DepDescComp implements Comparator<String> {
     @Override
     public int compare(String o1, String o2) {
-        int limit = Math.min(o2.length(), o1.length());
-        for (int j = 0; j < 2 ; j++) {
-            int result = Character.compare(o2.charAt(j), o1.charAt(j));
-            if (result != 0 ) {
-                return result;
-            }
+        int result = o2.substring(0, 2).compareTo(o1.substring(0, 2));
+        if (result == 0) {
+            return o1.substring(2).compareTo(o2.substring(2));
+        } else {
+            return result;
         }
-        for (int i = 3; i < limit ; i++) {
-            int result = Character.compare(o1.charAt(i), o2.charAt(i));
-            if (result != 0 ) {
-                return result;
-            }
-        }
-        return Integer.compare(o1.length(), o2.length());
     }
 }

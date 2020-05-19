@@ -21,16 +21,16 @@ public class FuncTest {
     @Test
     public void whenQuadraticFunctionThenLinearResults() {
         Func func = new Func();
-        List<Double> result = func.diapason(5, 8, x -> Double.valueOf(2 * Math.pow(x,2) + 1));
-        List<Double> expected = Arrays.asList(11D, 13D, 15D);
+        List<Double> result = func.diapason(5, 8, x -> Double.valueOf(Math.pow(x,2)));
+        List<Double> expected = Arrays.asList(25D, 36D, 49D);
         assertThat(result, is(expected));
     }
 
     @Test
     public void whenExponentialFunctionThenLinearResults() {
         Func func = new Func();
-        List<Double> result = func.diapason(5, 8, x -> Double.valueOf(2 * x + 1));
-        List<Double> expected = Arrays.asList(11D, 13D, 15D);
+        List<Double> result = func.diapason(5, 8, x -> Double.valueOf(Math.pow(2,x)));
+        List<Double> expected = Arrays.asList(32D, 64D, 128D);
         assertThat(result, is(expected));
     }
 }

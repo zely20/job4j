@@ -1,15 +1,16 @@
 package ru.job4j.stream;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
 public class ConvertStudentToMap {
 
-    public Map<String, Student> convert(List<Student> students) {
+    public static Map<String, Student> convert(List<Student> students) {
          Map<String, Student> mapStudent = students.stream()
-                .distinct()
-                .collect(Collectors.toMap(s -> s.getSurname(), s -> s));
+                .collect(Collectors.toMap(Student::getSurname, student -> student, (a, b) -> a));
          return mapStudent;
     }
 }

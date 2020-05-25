@@ -18,7 +18,7 @@ public class SchoolTest {
         );
         Predicate<Student> aGroup = k -> k.getScore() >= 70 && k.getScore() <= 100;
         School school = new School();
-        assertThat(school.collect(input,aGroup).get(0).getSurname(), is("Vasya"));
+        assertThat(school.collect(input, aGroup).get(0).getSurname(), is("Vasya"));
     }
 
     @Test
@@ -29,7 +29,7 @@ public class SchoolTest {
         );
         Predicate<Student> aGroup = k -> k.getScore() >= 50 && k.getScore() < 70;
         School school = new School();
-        assertThat(school.collect(input,aGroup).get(0).getSurname(), is("Ivan"));
+        assertThat(school.collect(input, aGroup).get(0).getSurname(), is("Ivan"));
     }
 
     @Test
@@ -40,6 +40,6 @@ public class SchoolTest {
         );
         Predicate<Student> aGroup = k -> k.getScore() >= 0 && k.getScore() < 50;
         School school = new School();
-        assertThat(school.collect(input,aGroup).get(0).getSurname(), is("Alex"));
+        assertThat(school.collect(input, aGroup).get(0).getSurname(), is("Alex"));
     }
 }

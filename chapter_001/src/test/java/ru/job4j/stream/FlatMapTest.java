@@ -1,5 +1,6 @@
 package ru.job4j.stream;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
@@ -18,6 +19,6 @@ public class FlatMapTest {
         FlatMap flatMap = new FlatMap();
         List<Integer> expected = List.of(1, 2, 3, 4);
         List<Integer> result = flatMap.matrixToList(matrix);
-        assertThat(expected,is(result));
+        Assert.assertEquals(expected, result);
     }
 }

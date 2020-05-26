@@ -6,7 +6,9 @@ import java.util.stream.Collectors;
 public class FlatMap {
 
     public List<Integer> matrixToList(List<List<Integer>> matrix) {
-              return matrix.stream().flatMap(List::stream).collect(Collectors.toList());
+              return matrix
+                      .stream()
+                      .flatMap(List::stream)
+                      .collect(Collectors.toList());
     }
-
 }

@@ -1,15 +1,13 @@
 package ru.job4j.bank;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.Map.Entry;
 
 public class BankService {
     private Map<User, List<Account>> users = new HashMap<>();
 
     public void addUser(User user) {
-              users.putIfAbsent(user, new ArrayList<Account>());
+        users.putIfAbsent(user, new ArrayList<Account>());
     }
 
     public void addAccount(String passport, Account account) {
@@ -22,26 +20,27 @@ public class BankService {
         }
     }
 
+
     public User findByPassport(String passport) {
-        for (User user : users.keySet()) {
-            if (user.getPassport().equals(passport)) {
-                return user;
-            }
-        }
-        return null;
+        User user;
+        return user = users
+                .keySet()
+                .stream()
+                .filter(u -> u.getPassport().equals(passport))
+                .findAny()
+                .orElseThrow(NoSuchElementException::new);
     }
 
     public Account findByRequisite(String passport, String requisite) {
-        User user = findByPassport(passport);
-        if (user != null) {
-            ArrayList<Account> accounts = (ArrayList<Account>) users.get(user);
-            for (Account account : accounts) {
-                if (account.getRequisite().equals(requisite)) {
-                    return account;
-                }
-            }
-        }
-        return null;
+        Account account;
+        return account = users.entrySet()
+                .stream()
+                .filter(f -> f.getKey().getPassport().equals(passport))
+                .map(Entry::getValue)
+                .flatMap(l -> l.stream())
+                .filter(ac -> ac.getRequisite().equals(requisite))
+                .findAny()
+                .orElseThrow(NoSuchElementException::new);
     }
 
     public boolean transferMoney(String srcPassport, String srcRequisite,

@@ -28,7 +28,7 @@ public class BankService {
                 .stream()
                 .filter(u -> u.getPassport().equals(passport))
                 .findAny()
-                .orElseThrow(NoSuchElementException::new);
+                .orElse(null);
     }
 
     public Account findByRequisite(String passport, String requisite) {
@@ -40,7 +40,7 @@ public class BankService {
                 .flatMap(l -> l.stream())
                 .filter(ac -> ac.getRequisite().equals(requisite))
                 .findAny()
-                .orElseThrow(NoSuchElementException::new);
+                .orElse(null);
     }
 
     public boolean transferMoney(String srcPassport, String srcRequisite,

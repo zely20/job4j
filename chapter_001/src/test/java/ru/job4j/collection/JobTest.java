@@ -25,9 +25,7 @@ public class JobTest {
 
     @Test
     public void whenAsc() {
-        Set<Job> users = new TreeSet<>();
-        users.add(new Job("Ab", 2));
-        users.add(new Job("Ba", 1));
+        Set<Job> users = Set.of(new Job("Ab", 2), new Job("Ba", 1));
         Iterator<Job> it = users.iterator();
         assertThat(it.next(), is(new Job("Ba", 1)));
         assertThat(it.next(), is(new Job("Ab", 2)));

@@ -2,6 +2,7 @@ package ru.job4j.stream;
 
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.Matchers.is;
@@ -11,7 +12,7 @@ public class StudentLevelTest {
 
     @Test
     public void levelOfTest() {
-        List<Student> input = List.of(new Student("Al", 25),
+        List<Student> input = Arrays.asList(new Student("Al", 25),
                 null,
                 new Student("Pety",28),
                 new Student("Vasya", 29),

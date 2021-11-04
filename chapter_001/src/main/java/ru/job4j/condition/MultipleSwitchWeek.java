@@ -1,5 +1,6 @@
 package ru.job4j.condition;
 
+/*
 
 public class MultipleSwitchWeek {
     public static int numberOfDay(String name) {
@@ -15,3 +16,4 @@ public class MultipleSwitchWeek {
         };
     }
 }
+*/

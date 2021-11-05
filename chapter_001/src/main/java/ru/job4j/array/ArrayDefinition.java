@@ -15,5 +15,9 @@ public class ArrayDefinition {
         names[2] = "Tanya";
         names[3] = "Olga";
         System.out.println(Arrays.toString(names));
+        System.out.println(ages.length);
+        System.out.println(surnames.length);
+        System.out.println(prices.length);
+        System.out.println(names.length);
     }
 }
